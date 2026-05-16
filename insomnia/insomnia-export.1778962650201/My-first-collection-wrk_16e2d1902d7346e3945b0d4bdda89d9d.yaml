@@ -1,0 +1,185 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_16e2d1902d7346e3945b0d4bdda89d9d
+  created: 1778955254307
+  modified: 1778955254307
+  description: ""
+collection:
+  - url: http://localhost:8080/cliente
+    name: CadastrarCliente
+    meta:
+      id: req_69145bdd33d34315a62acf5186c43a42
+      created: 1778955254438
+      modified: 1778955721015
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254438
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente
+    name: ListarClientes
+    meta:
+      id: req_32ad25fe6c4a477b9b3a991206873f95
+      created: 1778955745989
+      modified: 1778955751423
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254388
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/2
+    name: BuscarClienteId
+    meta:
+      id: req_e97e5a18740849f19c6a9c141f513b76
+      created: 1778956713645
+      modified: 1778956735054
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254413
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/2
+    name: AtualizarCliente
+    meta:
+      id: req_97e6e34aa3a64fffa9bf95e857f464fb
+      created: 1778958169973
+      modified: 1778958401147
+      isPrivate: false
+      description: ""
+      sortKey: -1778958169973
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Atualizada",
+          "cpf": "99999999999",
+          "email": "novoemail@gmail.com",
+          "telefone": "11988888888",
+          "nascimento": "2001-01-01"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/2
+    name: DeleteCliente
+    meta:
+      id: req_62fb442cf9944274b906503a5397be60
+      created: 1778958552591
+      modified: 1778958648762
+      isPrivate: false
+      description: ""
+      sortKey: -1778958552591
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a85dcc591d9ddede4cba1b59f1729d9e62e86674
+    created: 1778955254323
+    modified: 1778955254323
+environments:
+  name: Base Environment
+  meta:
+    id: env_a85dcc591d9ddede4cba1b59f1729d9e62e86674
+    created: 1778955254319
+    modified: 1778955254319
+    isPrivate: false
