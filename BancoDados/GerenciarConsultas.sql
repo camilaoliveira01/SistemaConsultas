@@ -21,10 +21,16 @@ CREATE TABLE IF NOT EXISTS Medico (
     telefone varchar(11) not null,
     nomeEspecialidade varchar(30)
     );
-       
+
+ALTER TABLE medico
+ADD COLUMN status VARCHAR(15) DEFAULT 'ATIVO';
+
+Show tables;
+
+  
     
 Create table if not exists Consulta (
-	Protocolo bigint primary key auto_increment,
+	protocolo bigint primary key auto_increment,
 	dataConsulta date not null,
     hora time not null,
     status varchar(15),
@@ -40,3 +46,14 @@ Create table if not exists Atendente (
 	nome varchar(150) not null,
 	cpf VARCHAR(11) not null
 );
+
+
+Select * from Cliente; 
+
+Select * from Medico;
+
+Select * from Consulta;    
+
+UPDATE medico
+SET status = 'ATIVO'
+WHERE status IS NULL;
