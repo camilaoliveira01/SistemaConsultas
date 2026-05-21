@@ -40,11 +40,14 @@ public class ClienteController {
         return clienteService.atualizar(id, cliente);
     }
 
-    // EXCLUIR CLIENTE
+    //DELETAR CLIENTE
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Integer id){
-        clienteService.deletar(id);
+    public String deletarCliente(@PathVariable Integer id){
+        try {
+            clienteService.deletarCliente(id);
+            return "Cliente deletado com sucesso!";
+        } catch (Exception e) {
+            return "Não é possível deletar este cliente, pois ele possui consultas cadastradas.";
+        }
     }
-
-
 }

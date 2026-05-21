@@ -19,6 +19,7 @@ public class Medico {
     private String cpf;
     private String telefone;
     private String nomeEspecialidade;
+    private String status;
 
     public Integer getId() {
         return id;
@@ -60,4 +61,7 @@ public class Medico {
         this.nomeEspecialidade = nomeEspecialidade;
     }
 
+    public String getStatus() { return status;}
+
+    public void setStatus(String status) { this.status = status;}
 }

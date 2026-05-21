@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import java.time.LocalDate;
 
 @Entity
-@Table(name= "cliente")
+@Table(name= "Cliente")
 
 public class Cliente {
         @Id

@@ -28,4 +28,22 @@ public class MedicoController {
         return medicoService.listar();
     }
 
+    //BUSCAR MEDICO
+    @GetMapping("/{id}")
+    public Medico buscarPorId(@PathVariable Integer id) {
+        return medicoService.buscarPorId(id);
+    }
+
+    //ATUALISAR MÉDICO
+
+    @PutMapping("/{id}")
+    public Medico atualizarMedico(@PathVariable Integer id, @RequestBody Medico medico){
+        return medicoService.atualizarMedico(id,medico);
+    }
+
+    //INATIVAR MEDICO
+    @PutMapping("/inativar/{id}")
+    public Medico inativarMedico(@PathVariable Integer id){
+        return medicoService.inativarMedico(id);
+    }
 }
