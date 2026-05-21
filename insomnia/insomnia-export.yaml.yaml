@@ -1,0 +1,527 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: GerenciarConsultas
+meta:
+  id: wrk_16e2d1902d7346e3945b0d4bdda89d9d
+  created: 1778955254307
+  modified: 1779038152864
+  description: ""
+collection:
+  - url: http://localhost:8080/cliente
+    name: CadastrarCliente
+    meta:
+      id: req_69145bdd33d34315a62acf5186c43a42
+      created: 1778955254438
+      modified: 1778955721015
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254438
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente
+    name: ListarClientes
+    meta:
+      id: req_32ad25fe6c4a477b9b3a991206873f95
+      created: 1778955745989
+      modified: 1778955751423
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254388
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/medico/1
+    name: BuscarClienteId
+    meta:
+      id: req_e97e5a18740849f19c6a9c141f513b76
+      created: 1778956713645
+      modified: 1779379633125
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254413
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Gustavo Lima",
+          "cpf": "58962458715",
+          "telefone": "11910910990",
+          "nomeEspecialidade": "Clinico Geral"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/2
+    name: AtualizarCliente
+    meta:
+      id: req_97e6e34aa3a64fffa9bf95e857f464fb
+      created: 1778958169973
+      modified: 1778958401147
+      isPrivate: false
+      description: ""
+      sortKey: -1778958169973
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Atualizada",
+          "cpf": "99999999999",
+          "email": "novoemail@gmail.com",
+          "telefone": "11988888888",
+          "nascimento": "2001-01-01"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/1
+    name: DeleteCliente
+    meta:
+      id: req_62fb442cf9944274b906503a5397be60
+      created: 1778958552591
+      modified: 1779386226300
+      isPrivate: false
+      description: ""
+      sortKey: -1778958552591
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/consulta
+    name: CadastrarConsulta
+    meta:
+      id: req_63d3db7308354fcf85a4692c347152de
+      created: 1779374228883
+      modified: 1779375268137
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254425.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "dataConsulta": "2025-05-01",
+          "horaConsulta": "12:00:00",
+          "cliente": {"id": 1},
+          "medico": {"id": 1}
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/medico
+    name: CadastrarMedico
+    meta:
+      id: req_1b32b57337e24da390f3a0454a0adbad
+      created: 1779374601657
+      modified: 1779374920383
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254419.25
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Gustavo Lima",
+          "cpf": "58962458715",
+          "telefone": "11910910990",
+          "nomeEspecialidade": "Clinico Geral"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/consulta
+    name: ListarConsultas
+    meta:
+      id: req_f948e8172d1742a2ad13eb93430e45cc
+      created: 1779375431439
+      modified: 1779375539236
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254338
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+           "dataConsulta": "2025-05-01",
+          "horaConsulta": "12:00:00",
+          "cliente": {"id": 1},
+          "medico": {"id": 1}
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/consulta/3
+    name: BuscarConsultaProtocolo
+    meta:
+      id: req_33665eaf40a546bdae5022238f548af5
+      created: 1779375615516
+      modified: 1779376484616
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254400.5
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/consulta/3
+    name: AtualizarConsultaProtocolo
+    meta:
+      id: req_086dc62e33d5464681c2118f0c10e625
+      created: 1779376795563
+      modified: 1779378085819
+      isPrivate: false
+      description: ""
+      sortKey: -1778956712205.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "dataConsulta": "2025-05-20",
+          "horaConsulta": "14:30:00"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/consulta/cancelar/3
+    name: AtualizarCanlecarConsulta
+    meta:
+      id: req_544499036d5849a1a7d5e2f9f96856b3
+      created: 1779379237125
+      modified: 1779379259282
+      isPrivate: false
+      description: ""
+      sortKey: -1778955983321.75
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/medico
+    name: ListarMedicos
+    meta:
+      id: req_07bcd738e8304ca5b85285c94ee1e385
+      created: 1779379535452
+      modified: 1779380227598
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254363
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Gustavo Lima",
+          "cpf": "58962458715",
+          "telefone": "11910910990",
+          "nomeEspecialidade": "Clinico Geral"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/2
+    name: BuscarMedicoId
+    meta:
+      id: req_89840db0be52432ea58e4a79a57723be
+      created: 1779379615314
+      modified: 1779379615314
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254406.75
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Silva",
+          "cpf": "12345678910",
+          "email": "maria@gmail.com",
+          "telefone": "11910910910",
+          "nascimento": "2006-05-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/medico/1
+    name: AtualizarMedico
+    meta:
+      id: req_c7181f85b8274c049c2a94106746c00e
+      created: 1779380341798
+      modified: 1779380371694
+      isPrivate: false
+      description: ""
+      sortKey: -1778957441089.25
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Gustavo Lima",
+          "cpf": "58962458715",
+          "telefone": "11910910990",
+          "nomeEspecialidade": "Clinico Geral"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/medico/inativar/1
+    name: InativarMedico
+    meta:
+      id: req_1c47c51e98f64f20bb910bd953827397
+      created: 1779387494047
+      modified: 1779387517888
+      isPrivate: false
+      description: ""
+      sortKey: -1778957076647.375
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "id": 1,
+          "nome": "...",
+          "cpf": "...",
+          "telefone": "...",
+          "nomeEspecialidade": "...",
+          "status": "INATIVO"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a85dcc591d9ddede4cba1b59f1729d9e62e86674
+    created: 1778955254323
+    modified: 1778955254323
+environments:
+  name: Base Environment
+  meta:
+    id: env_a85dcc591d9ddede4cba1b59f1729d9e62e86674
+    created: 1778955254319
+    modified: 1778955254319
+    isPrivate: false
