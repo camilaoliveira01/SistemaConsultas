@@ -71,3 +71,11 @@ WHERE id > 0;
 
 ALTER TABLE cliente
 ADD CONSTRAINT uk_cliente_cpf UNIQUE (cpf);
+
+
+INSERT INTO Medico (nome, cpf, telefone, nomeEspecialidade) VALUES
+('Dr. Carlos Henrique', '11122233344', '11988887777', 'Clínico Geral'),
+('Dra. Mariana Lopes', '22233344455', '11977776666', 'Cardiologia'),
+('Dr. Rafael Mendes', '33344455566', '11966665555', 'Dermatologia'),
+('Dra. Camila Rocha', '44455566677', '11955554444', 'Pediatria'),
+('Dr. Bruno Almeida', '55566677788', '11944443333', 'Ortopedia');

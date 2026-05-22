@@ -12,7 +12,7 @@ collection:
     meta:
       id: req_69145bdd33d34315a62acf5186c43a42
       created: 1778955254438
-      modified: 1778955721015
+      modified: 1779409306438
       isPrivate: false
       description: ""
       sortKey: -1778955254438
@@ -21,11 +21,11 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Maria Silva",
-          "cpf": "12345678910",
-          "email": "maria@gmail.com",
-          "telefone": "11910910910",
-          "nascimento": "2006-05-10"
+          "nome": "Teste CPF",
+          "cpf": "11111111111",
+          "email": "teste@gmail.com",
+          "telefone": "11999999999",
+          "nascimento": "2000-01-01"
         }
     headers:
       - name: Content-Type
@@ -47,7 +47,7 @@ collection:
     meta:
       id: req_32ad25fe6c4a477b9b3a991206873f95
       created: 1778955745989
-      modified: 1778955751423
+      modified: 1779405883387
       isPrivate: false
       description: ""
       sortKey: -1778955254388
@@ -56,45 +56,6 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Maria Silva",
-          "cpf": "12345678910",
-          "email": "maria@gmail.com",
-          "telefone": "11910910910",
-          "nascimento": "2006-05-10"
-        }
-    headers:
-      - name: Content-Type
-        value: application/json
-      - name: User-Agent
-        value: insomnia/12.5.0
-        description: ""
-        disabled: false
-    settings:
-      renderRequestBody: true
-      encodeUrl: true
-      followRedirects: global
-      cookies:
-        send: true
-        store: true
-      rebuildPath: true
-  - url: http://localhost:8080/medico/1
-    name: BuscarClienteId
-    meta:
-      id: req_e97e5a18740849f19c6a9c141f513b76
-      created: 1778956713645
-      modified: 1779379633125
-      isPrivate: false
-      description: ""
-      sortKey: -1778955254413
-    method: GET
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "nome": "Gustavo Lima",
-          "cpf": "58962458715",
-          "telefone": "11910910990",
-          "nomeEspecialidade": "Clinico Geral"
         	
         }
     headers:
@@ -112,12 +73,43 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: http://localhost:8080/cliente/2
+  - url: http://localhost:8080/cliente/1
+    name: BuscarClienteId
+    meta:
+      id: req_e97e5a18740849f19c6a9c141f513b76
+      created: 1778956713645
+      modified: 1779405939746
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254413
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/1
     name: AtualizarCliente
     meta:
       id: req_97e6e34aa3a64fffa9bf95e857f464fb
       created: 1778958169973
-      modified: 1778958401147
+      modified: 1779405322609
       isPrivate: false
       description: ""
       sortKey: -1778958169973
@@ -126,11 +118,11 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Maria Atualizada",
-          "cpf": "99999999999",
-          "email": "novoemail@gmail.com",
-          "telefone": "11988888888",
-          "nascimento": "2001-01-01"
+          "nome": "Sarah",
+          "cpf": "00000000000",
+          "email": "sarah@gmail.com",
+          "telefone": "11999999999",
+          "nascimento": "2000-01-01"
         }
     headers:
       - name: Content-Type
@@ -175,7 +167,7 @@ collection:
     meta:
       id: req_63d3db7308354fcf85a4692c347152de
       created: 1779374228883
-      modified: 1779375268137
+      modified: 1779410974855
       isPrivate: false
       description: ""
       sortKey: -1778955254425.5
@@ -184,10 +176,16 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "dataConsulta": "2025-05-01",
-          "horaConsulta": "12:00:00",
-          "cliente": {"id": 1},
-          "medico": {"id": 1}
+          "dataConsulta": "2026-05-25",
+          "horaConsulta": "14:00:00",
+
+          "cliente": {
+            "id": 6
+          },
+
+          "medico": {
+            "id": 6
+          }
         }
     headers:
       - name: Content-Type
@@ -209,7 +207,7 @@ collection:
     meta:
       id: req_1b32b57337e24da390f3a0454a0adbad
       created: 1779374601657
-      modified: 1779374920383
+      modified: 1779410006569
       isPrivate: false
       description: ""
       sortKey: -1778955254419.25
@@ -218,11 +216,11 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Gustavo Lima",
-          "cpf": "58962458715",
-          "telefone": "11910910990",
-          "nomeEspecialidade": "Clinico Geral"
-        	
+          "nome": "Dra Ana",
+          "cpf": "22222222222",
+          "telefone": "11988887777",
+          "nomeEspecialidade": "Cardiologia",
+          "status": "ATIVO"
         }
     headers:
       - name: Content-Type
@@ -244,7 +242,7 @@ collection:
     meta:
       id: req_f948e8172d1742a2ad13eb93430e45cc
       created: 1779375431439
-      modified: 1779375539236
+      modified: 1779405984668
       isPrivate: false
       description: ""
       sortKey: -1778955254338
@@ -253,10 +251,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-           "dataConsulta": "2025-05-01",
-          "horaConsulta": "12:00:00",
-          "cliente": {"id": 1},
-          "medico": {"id": 1}
+            
         }
     headers:
       - name: Content-Type
@@ -273,12 +268,12 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: http://localhost:8080/consulta/3
+  - url: http://localhost:8080/consulta/1
     name: BuscarConsultaProtocolo
     meta:
       id: req_33665eaf40a546bdae5022238f548af5
       created: 1779375615516
-      modified: 1779376484616
+      modified: 1779406317718
       isPrivate: false
       description: ""
       sortKey: -1778955254400.5
@@ -287,11 +282,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Maria Silva",
-          "cpf": "12345678910",
-          "email": "maria@gmail.com",
-          "telefone": "11910910910",
-          "nascimento": "2006-05-10"
+          
         }
     headers:
       - name: Content-Type
@@ -308,12 +299,12 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: http://localhost:8080/consulta/3
+  - url: http://localhost:8080/consulta/1
     name: AtualizarConsultaProtocolo
     meta:
       id: req_086dc62e33d5464681c2118f0c10e625
       created: 1779376795563
-      modified: 1779378085819
+      modified: 1779405800792
       isPrivate: false
       description: ""
       sortKey: -1778956712205.5
@@ -322,8 +313,14 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "dataConsulta": "2025-05-20",
-          "horaConsulta": "14:30:00"
+          "dataConsulta": "2025-06-15",
+          "horaConsulta": "16:30:00",
+          "cliente": {
+            "id": 1
+          },
+          "medico": {
+            "id": 1
+          }
         }
     headers:
       - name: Content-Type
@@ -340,12 +337,12 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: http://localhost:8080/consulta/cancelar/3
-    name: AtualizarCanlecarConsulta
+  - url: http://localhost:8080/consulta/cancelar/1
+    name: AtualizarCancelarConsulta
     meta:
       id: req_544499036d5849a1a7d5e2f9f96856b3
       created: 1779379237125
-      modified: 1779379259282
+      modified: 1779405836534
       isPrivate: false
       description: ""
       sortKey: -1778955983321.75
@@ -354,7 +351,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-        	
+          "status": "CANCELADA"
         }
     headers:
       - name: Content-Type
@@ -376,7 +373,7 @@ collection:
     meta:
       id: req_07bcd738e8304ca5b85285c94ee1e385
       created: 1779379535452
-      modified: 1779380227598
+      modified: 1779405953332
       isPrivate: false
       description: ""
       sortKey: -1778955254363
@@ -384,11 +381,8 @@ collection:
     body:
       mimeType: application/json
       text: |-
+        
         {
-          "nome": "Gustavo Lima",
-          "cpf": "58962458715",
-          "telefone": "11910910990",
-          "nomeEspecialidade": "Clinico Geral"
         	
         }
     headers:
@@ -406,12 +400,12 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: http://localhost:8080/cliente/2
+  - url: http://localhost:8080/medico/1
     name: BuscarMedicoId
     meta:
       id: req_89840db0be52432ea58e4a79a57723be
       created: 1779379615314
-      modified: 1779379615314
+      modified: 1779405965309
       isPrivate: false
       description: ""
       sortKey: -1778955254406.75
@@ -420,11 +414,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Maria Silva",
-          "cpf": "12345678910",
-          "email": "maria@gmail.com",
-          "telefone": "11910910910",
-          "nascimento": "2006-05-10"
+
         }
     headers:
       - name: Content-Type
@@ -446,7 +436,7 @@ collection:
     meta:
       id: req_c7181f85b8274c049c2a94106746c00e
       created: 1779380341798
-      modified: 1779380371694
+      modified: 1779405711219
       isPrivate: false
       description: ""
       sortKey: -1778957441089.25
@@ -455,11 +445,11 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "nome": "Gustavo Lima",
-          "cpf": "58962458715",
-          "telefone": "11910910990",
-          "nomeEspecialidade": "Clinico Geral"
-        	
+          "nome": "Dr João Atualizado",
+          "cpf": "11111111111",
+          "telefone": "11966666666",
+          "nomeEspecialidade": "Ortopedia",
+          "status": "ATIVO"
         }
     headers:
       - name: Content-Type
@@ -481,7 +471,7 @@ collection:
     meta:
       id: req_1c47c51e98f64f20bb910bd953827397
       created: 1779387494047
-      modified: 1779387517888
+      modified: 1779405736148
       isPrivate: false
       description: ""
       sortKey: -1778957076647.375
@@ -490,12 +480,39 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "id": 1,
-          "nome": "...",
-          "cpf": "...",
-          "telefone": "...",
-          "nomeEspecialidade": "...",
           "status": "INATIVO"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/medico/especialidade/Cardiologia
+    name: ListarMedicoEspecialidade
+    meta:
+      id: req_92cf4bc7fb5d4f749fb724f5c0e98d64
+      created: 1779418514960
+      modified: 1779418600731
+      isPrivate: false
+      description: ""
+      sortKey: -1778955254350.5
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        
+        {
+        	
         }
     headers:
       - name: Content-Type
