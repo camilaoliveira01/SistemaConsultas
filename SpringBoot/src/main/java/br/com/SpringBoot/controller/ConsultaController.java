@@ -1,9 +1,12 @@
 package br.com.SpringBoot.controller;
 
-import br.com.SpringBoot.model.Consulta;
 import br.com.SpringBoot.service.ConsultaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import br.com.SpringBoot.dto.ConsultaDTO;
+import br.com.SpringBoot.model.Consulta;
+import br.com.SpringBoot.model.Cliente;
+import br.com.SpringBoot.model.Medico;
 
 import java.util.List;
 
@@ -16,7 +19,16 @@ public class ConsultaController {
 
     // SALVAR CONSULTA
     @PostMapping
-    public Consulta salvar(@RequestBody Consulta consulta) {
+    public Consulta salvar(@RequestBody ConsultaDTO consultaDTO){
+
+        Consulta consulta = new Consulta();
+
+        consulta.setDataConsulta(consultaDTO.getDataConsulta());
+        consulta.setHoraConsulta(consultaDTO.getHoraConsulta());
+
+        consulta.setCliente(consultaDTO.getCliente());
+        consulta.setMedico(consultaDTO.getMedico());
+
         return consultaService.salvar(consulta);
     }
 

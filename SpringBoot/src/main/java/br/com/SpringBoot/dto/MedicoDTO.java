@@ -1,39 +1,18 @@
-package br.com.SpringBoot.model;
+package br.com.SpringBoot.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import br.com.SpringBoot.enums.StatusMedico;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
-@Entity
-@Table(name = "Medico")
-
-public class Medico {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class MedicoDTO {
 
     private String nome;
     private String cpf;
     private String telefone;
     private String nomeEspecialidade;
-
-    @Enumerated(EnumType.STRING)
     private StatusMedico status;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
+    //  GETTERS E SETTERS
     public String getNome() {
         return nome;
     }

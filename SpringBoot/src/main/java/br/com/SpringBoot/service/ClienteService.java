@@ -15,6 +15,10 @@ public class ClienteService {
 
     // SALVAR
     public Cliente salvar(Cliente cliente){
+        if(clienteRepository.existsByCpf(cliente.getCpf())) {
+            throw new IllegalArgumentException("CPF já cadastrado");
+        }
+
         return clienteRepository.save(cliente);
     }
 

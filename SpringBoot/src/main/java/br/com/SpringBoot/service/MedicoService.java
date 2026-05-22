@@ -4,6 +4,8 @@ import br.com.SpringBoot.model.Medico;
 import br.com.SpringBoot.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import br.com.SpringBoot.enums.StatusMedico;
+
 
 import java.util.List;
 @Service
@@ -15,7 +17,7 @@ public class MedicoService {
 
 
     //SALVAR CADASTRO MÉDICO
-    public Medico salvar(Medico medico) { medico.setStatus("ATIVO");
+    public Medico salvar(Medico medico) { medico.setStatus(StatusMedico.ATIVO);
         return medicoRepository.save(medico);
     }
 
@@ -39,8 +41,7 @@ public class MedicoService {
     public Medico inativarMedico(Integer id) {
         Medico medico = medicoRepository.findById(id).orElse(null);
 
-        if (medico != null) {
-            medico.setStatus("INATIVO");
+        if (medico != null) {medico.setStatus(StatusMedico.INATIVO);
             return medicoRepository.save(medico);
         }
 

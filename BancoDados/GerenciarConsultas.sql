@@ -19,28 +19,24 @@ CREATE TABLE IF NOT EXISTS Medico (
     nome varchar(150) not null,
     cpf varchar(11) not null,
     telefone varchar(11) not null,
-    nomeEspecialidade varchar(30)
+    nomeEspecialidade varchar(30),
+    status VARCHAR(15) DEFAULT 'ATIVO'
     );
 
-ALTER TABLE medico
-ADD COLUMN status VARCHAR(15) DEFAULT 'ATIVO';
-
-Show tables;
-
-  
     
 Create table if not exists Consulta (
 	protocolo bigint primary key auto_increment,
 	dataConsulta date not null,
-    hora time not null,
+    horaConsulta time not null,
     status varchar(15),
     id_cliente int,
     foreign key (id_cliente) references Cliente(id),
     id_medico int,
     foreign key (id_medico) references Medico(id)
 );
-    
-    
+ 
+
+
 Create table if not exists Atendente (
 	id int primary key auto_increment,
 	nome varchar(150) not null,
@@ -54,6 +50,24 @@ Select * from Medico;
 
 Select * from Consulta;    
 
-UPDATE medico
-SET status = 'ATIVO'
-WHERE status IS NULL;
+DESCRIBE Consulta;
+
+ALTER TABLE Consulta
+DROP COLUMN dataConsulta;
+
+ALTER TABLE Consulta
+DROP COLUMN horaConsulta;
+
+SELECT cpf, COUNT(*)
+FROM Cliente
+GROUP BY cpf
+HAVING COUNT(*) > 1;
+
+DELETE FROM Consulta
+WHERE protocolo > 0;
+
+DELETE FROM Cliente
+WHERE id > 0;
+
+ALTER TABLE cliente
+ADD CONSTRAINT uk_cliente_cpf UNIQUE (cpf);

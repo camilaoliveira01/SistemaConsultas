@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import br.com.SpringBoot.model.Medico;
 import br.com.SpringBoot.service.MedicoService;
-
+import br.com.SpringBoot.dto.MedicoDTO;
 import java.util.List;
 
 @RestController
@@ -18,7 +18,16 @@ public class MedicoController {
 
     //SALVAR
     @PostMapping
-    public Medico salvar(@RequestBody Medico medico){
+    public Medico salvar(@RequestBody MedicoDTO medicoDTO){
+
+        Medico medico = new Medico();
+
+        medico.setNome(medicoDTO.getNome());
+        medico.setCpf(medicoDTO.getCpf());
+        medico.setTelefone(medicoDTO.getTelefone());
+        medico.setNomeEspecialidade(medicoDTO.getNomeEspecialidade());
+        medico.setStatus(medicoDTO.getStatus());
+
         return medicoService.salvar(medico);
     }
 

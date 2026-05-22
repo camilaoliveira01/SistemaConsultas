@@ -4,8 +4,10 @@ import br.com.SpringBoot.model.Cliente;
 import br.com.SpringBoot.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import br.com.SpringBoot.dto.ClienteDTO;
 import java.util.List;
+
+//  DTO NÃO é tabela DTO só transporte as dados.
 
 @RestController
 @RequestMapping("/cliente")
@@ -16,7 +18,16 @@ public class ClienteController {
 
     // SALVAR CLIENTE
     @PostMapping
-    public Cliente salvar(@RequestBody Cliente cliente){
+    public Cliente salvar(@RequestBody ClienteDTO clienteDTO){
+
+        Cliente cliente = new Cliente();
+
+        cliente.setNome(clienteDTO.getNome());
+        cliente.setCpf(clienteDTO.getCpf());
+        cliente.setEmail(clienteDTO.getEmail());
+        cliente.setTelefone(clienteDTO.getTelefone());
+        cliente.setNascimento(clienteDTO.getNascimento());
+
         return clienteService.salvar(cliente);
     }
 
