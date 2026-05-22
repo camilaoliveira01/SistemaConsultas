@@ -4,6 +4,7 @@ import br.com.SpringBoot.model.Cliente;
 import br.com.SpringBoot.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.time.LocalDate;
 
 import java.util.List;
 
@@ -13,6 +14,11 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
+
+    //LOGIN
+    public Cliente login(String cpf, LocalDate nascimento) {
+        return clienteRepository.findByCpfAndNascimento(cpf, nascimento);
+    }
     // SALVAR
     public Cliente salvar(Cliente cliente){
         if(clienteRepository.existsByCpf(cliente.getCpf())) {

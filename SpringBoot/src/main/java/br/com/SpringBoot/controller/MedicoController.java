@@ -43,7 +43,18 @@ public class MedicoController {
         return medicoService.buscarPorId(id);
     }
 
-    //ATUALISAR MÉDICO
+    // BUSCAR MÉDICO POR ESPECIALIDADE
+    @GetMapping("/especialidade/{especialidade}")
+    public List<Medico> buscarPorEspecialidade(@PathVariable String especialidade) {
+        return medicoService.buscarPorEspecialidade(especialidade);
+    }
+
+    //LISTAR ESPECIALIDADE
+    @GetMapping("/especialidades")
+    public List<String> listarEspecialidades() {
+        return medicoService.listarEspecialidades();
+    }
+    //ATUALIZAR MÉDICO
 
     @PutMapping("/{id}")
     public Medico atualizarMedico(@PathVariable Integer id, @RequestBody Medico medico){

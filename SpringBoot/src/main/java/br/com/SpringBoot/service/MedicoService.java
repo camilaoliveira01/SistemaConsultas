@@ -31,6 +31,17 @@ public class MedicoService {
         return medicoRepository.findById(id).orElse(null);
     }
 
+
+    //BUSCAR MÉDICO POR ESPECIALIDADE
+    public List<Medico> buscarPorEspecialidade(String especialidade) {
+        return medicoRepository.findByNomeEspecialidade(especialidade);
+    }
+
+    //BUSCAR  ESPECIALIDADE
+    public List<String> listarEspecialidades() {
+        return medicoRepository.listarEspecialidades();
+    }
+
     //ATUALIZAR MEDICO
     public Medico atualizarMedico(Integer id, Medico medico) {
         medico.setId(id);

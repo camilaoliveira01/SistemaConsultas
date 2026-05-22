@@ -16,6 +16,17 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+
+    //END POINT LOGIN
+    @PostMapping("/login")
+    public Cliente login(@RequestBody Cliente cliente) {
+
+        return clienteService.login(
+                cliente.getCpf(),
+                cliente.getNascimento()
+        );
+    }
+
     // SALVAR CLIENTE
     @PostMapping
     public Cliente salvar(@RequestBody ClienteDTO clienteDTO){

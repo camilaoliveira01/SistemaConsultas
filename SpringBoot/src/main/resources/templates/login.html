@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+
+    <form>
+        <label>CPF</label>
+        <input type="text" id="cpf" placeholder="Digite seu CPF">
+
+        <label>Data de nascimento</label>
+        <input type="date" id="nascimento">
+
+        <a class="botao" href="/agendamento-consulta">Entrar</a>
+    </form>
+
+    <p>
+        Ainda não tem cadastro?
+        <a href="/cadastro-cliente">Cadastrar cliente</a>
+    </p>
+</div>
+<script>
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const cpf = document.getElementById("cpf").value;
+        const nascimento = document.getElementById("nascimento").value;
+
+        const response = await fetch("/cliente/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"}
+            body: JSON.stringify({cpf: cpf,nascimento: nascimento})
+        });
+
+        const cliente = await response.json();
+
+        if(cliente != null && cliente.id != null){
+            alert("Login realizado com sucesso!");
+            window.location.href = "/agendamento-consulta";
+        }
+        else {
+                alert("CPF ou data de nascimento inválidos!");
+        }
+    });
+</script>
+</body>
+</html>

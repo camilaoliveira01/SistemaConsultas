@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cadastro de Cliente</h1>
+
+    <form id="formCliente">
+        <label>Nome</label>
+        <input type="text" id="nome" required>
+
+        <label>CPF</label>
+        <input type="text" id="cpf" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Telefone</label>
+        <input type="text" id="telefone" required>
+
+        <label>Data de nascimento</label>
+        <input type="date" id="nascimento" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <p><a href="/">Voltar para login</a></p>
+</div>
+
+<script>
+    document.getElementById("formCliente").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const cliente = {
+            nome: document.getElementById("nome").value,
+            cpf: document.getElementById("cpf").value,
+            email: document.getElementById("email").value,
+            telefone: document.getElementById("telefone").value,
+            nascimento: document.getElementById("nascimento").value
+        };
+
+        fetch("/cliente", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cliente)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Cliente cadastrado com sucesso!");
+            window.location.href = "/";
+        })
+        .catch(error => {
+            alert("Erro ao cadastrar cliente.");
+            console.error(error);
+        });
+    });
+</script>
+
+</body>
+</html>

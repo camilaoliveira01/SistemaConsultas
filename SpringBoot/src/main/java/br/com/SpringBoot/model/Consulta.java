@@ -29,6 +29,8 @@ import br.com.SpringBoot.enums.StatusConsulta;
         @JoinColumn(name = "id_medico")
         private Medico medico;
 
+        private Integer idMedico;
+
         public Long getProtocolo() {
             return protocolo;
         }
