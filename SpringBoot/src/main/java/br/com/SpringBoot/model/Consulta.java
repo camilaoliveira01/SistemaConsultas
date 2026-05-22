@@ -19,8 +19,7 @@ import br.com.SpringBoot.enums.StatusConsulta;
 
         @Enumerated(EnumType.STRING)
         private StatusConsulta status;
-        //    private Integer idCliente;
-        //    private Integer idMedico;
+
         @ManyToOne
         @JoinColumn(name = "id_cliente")
         private Cliente cliente;
@@ -28,8 +27,6 @@ import br.com.SpringBoot.enums.StatusConsulta;
         @ManyToOne
         @JoinColumn(name = "id_medico")
         private Medico medico;
-
-        private Integer idMedico;
 
         public Long getProtocolo() {
             return protocolo;
