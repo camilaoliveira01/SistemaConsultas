@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento de Consulta</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Agendar Consulta</h1>
+
+    <form id="formConsulta">
+
+        <label>Especialidade</label>
+        <select id="especialidade">
+            <option value="">Selecione uma especialidade</option>
+            <option value="Cardiologia">Cardiologia</option>
+            <option value="Dermatologia">Dermatologia</option>
+            <option value="Clínico Geral">Clínico Geral</option>
+        </select>
+
+        <label>Médico</label>
+        <select id="idMedico">
+            <option value="">Selecione um médico</option>
+        </select>
+
+        <label>Data da consulta</label>
+        <input type="date" id="dataConsulta">
+
+        <label>Hora da consulta</label>
+        <select id="horaConsulta">
+            <option value="">Selecione um horário</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+        </select>
+
+        <div id="resumoConsulta">
+
+        </div>
+
+        <button type="submit">Agendar</button>
+
+    </form>
+
+    <p><a href="/">Sair</a></p>
+</div>
+
+<script>
+    const especialidade = document.getElementById("especialidade");
+    const medico = document.getElementById("idMedico");
+
+    especialidade.addEventListener("change", function() {
+
+        if(especialidade.value == "Cardiologia"){
+                medico.innerHTML = `
+                <option value="">Selecione um médico</option>
+                <option value="1">Dr. Carlos</option>
+                <option value="2">Dra. Fernanda</option>
+            `;}
+
+        if(especialidade.value == "Dermatologia"){
+                medico.innerHTML = `
+                <option value="">Selecione um médico</option>
+                <option value="3">Dra. Juliana</option>
+            `;}
+
+        if(especialidade.value == "Clínico Geral"){
+            medico.innerHTML = `
+                <option value="">Selecione um médico</option>
+                <option value="4">Dr. Roberto</option>
+            `;
+        }
+   });
+
+    const dataConsulta = document.getElementById("dataConsulta");
+    const horaConsulta = document.getElementById("horaConsulta");
+    const resumo = document.getElementById("resumoConsulta");
+
+    function mostrarResumo(){
+
+        resumo.innerHTML = `
+            <p><strong>Especialidade:</strong> ${especialidade.value}</p>
+            <p><strong>Médico:</strong> ${medico.options[medico.selectedIndex].text}</p>
+            <p><strong>Data:</strong> ${dataConsulta.value}</p>
+            <p><strong>Horário:</strong> ${horaConsulta.value}</p>
+        `;
+
+    }
+
+    especialidade.addEventListener("change", mostrarResumo);
+    medico.addEventListener("change", mostrarResumo);
+    dataConsulta.addEventListener("change", mostrarResumo);
+    horaConsulta.addEventListener("change", mostrarResumo);
+
+
+
+    const formConsulta = document.getElementById("formConsulta");
+        formConsulta.addEventListener("submit", async function(event){
+            event.preventDefault();
+    const clienteId = localStorage.getItem("clienteId");
+    const consulta = {
+        dataConsulta: dataConsulta.value,
+        horaConsulta: horaConsulta.value,
+        cliente: {id: clienteId},
+        medico: {id: medico.value}
+    };
+
+    const resposta = await fetch("/consulta", {
+        method: "POST",
+           headers: {
+           "Content-Type": "application/json"
+           },
+        body: JSON.stringify(consulta)});
+        if(resposta.ok){
+            alert("Consulta agendada com sucesso!");
+        }
+        else{
+            alert("Erro ao agendar consulta!");
+            }
+    }
+    );
+</script>
+
+</body>
+</html>
